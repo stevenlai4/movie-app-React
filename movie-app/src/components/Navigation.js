@@ -4,7 +4,7 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 export default class Navigation extends Component {
     render() {
         return (
-            <div>
+            <div className="sticky-top">
                 <Navbar bg="dark" expand="lg" variant="dark">
                     <Navbar.Brand href="#home">Movie App</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
