@@ -1,8 +1,52 @@
+@import './global/mixins.scss';
+
 .banner {
+    .carousel-control-prev,
+    .carousel-control-next {
+        z-index: 50;
+    }
+
     .bannerItem {
         height: 65vh;
+        position: relative;
+
         .bannerImg {
             height: 100%;
+        }
+        .bannerText {
+            position: absolute;
+            left: 0;
+            top: 20vh;
+            width: 50%;
+            margin-left: 50px;
+        }
+        .bannerTitle {
+            @include cutParagraph(2);
+            font-size: 45px;
+            text-align: left;
+            left: 0;
+        }
+        .bannerOverview {
+            @include cutParagraph(3);
+            width: 85%;
+            text-align: left;
+            font-size: 19px;
+            font-weight: 500;
+        }
+        button {
+            position: relative;
+            z-index: 100;
+            padding: 10px 60px;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+
+            &:hover {
+                background-color: #cc0000;
+            }
         }
     }
 }
