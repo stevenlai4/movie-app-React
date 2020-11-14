@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import '../styles/Banner.scss';
 
-export default class Banner extends Component {
-    render() {
-        return (
-            <Carousel className="banner">
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="banner-img/avengers-end-game.jpg"
-                        alt="Avengers End Game"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="banner-img/maleficent.jpg"
-                        alt="Black Panther"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="banner-img/joker.jpg"
-                        alt="Joker"
-                    />
-                </Carousel.Item>
-            </Carousel>
-        );
-    }
+function Banner({ movies }) {
+    return (
+        <Carousel className="banner">
+            <Carousel.Item className="bannerItem">
+                <img
+                    className=" bannerImg d-block w-100"
+                    src={`https://image.tmdb.org/t/p/w1280${movies[0].backdrop_path}`}
+                    alt={movies[0].name}
+                />
+            </Carousel.Item>
+            <Carousel.Item className="bannerItem">
+                <img
+                    className=" bannerImg d-block w-100"
+                    src={`https://image.tmdb.org/t/p/w1280${movies[1].backdrop_path}`}
+                    alt={movies[1].name}
+                />
+            </Carousel.Item>
+            <Carousel.Item className="bannerItem">
+                <img
+                    className=" bannerImg d-block w-100"
+                    src={`https://image.tmdb.org/t/p/w1280${movies[2].backdrop_path}`}
+                    alt={movies[2].name}
+                />
+            </Carousel.Item>
+        </Carousel>
+    );
 }
+
+export default Banner;

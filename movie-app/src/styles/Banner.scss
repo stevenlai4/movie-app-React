@@ -1,5 +1,8 @@
 .banner {
-    img {
+    .bannerItem {
         height: 65vh;
+        .bannerImg {
+            height: 100%;
+        }
     }
 }
