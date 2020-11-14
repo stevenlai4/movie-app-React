@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/App.scss';
+import Navigation from './Navigation';
 import Banner from './Banner';
 import Movie from './Movie';
-import Navigation from './Navigation';
+import Footer from './Footer';
 
 function App() {
     const POPULAR_MOVIE_API =
@@ -34,6 +35,7 @@ function App() {
                 <Banner movies={movies.movies} />
                 <Navigation />
                 <Movie movies={movies.movies} />
+                <Footer />
             </div>
         );
     }
