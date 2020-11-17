@@ -3,7 +3,7 @@
 .banner {
     .carousel-control-prev,
     .carousel-control-next {
-        z-index: 50;
+        width: 3%;
     }
 
     .bannerItem {
@@ -35,7 +35,6 @@
         }
         button {
             position: relative;
-            z-index: 100;
             padding: 10px 60px;
             border-radius: 5px;
             background-color: red;

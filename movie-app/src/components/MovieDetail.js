@@ -12,6 +12,7 @@ export default function MovieDetail(props) {
         overview: '',
         date: '',
     });
+    const [isLoading, setIsLoading] = useState(true);
 
     // Component Lifecycle
     useEffect(() => {
@@ -32,29 +33,35 @@ export default function MovieDetail(props) {
                     date: movie.release_date,
                 })
             );
+
+        setIsLoading(false);
     });
 
-    return (
-        <div className="movie-detail">
-            <div className="movie-img">
-                <img
-                    src={`https://image.tmdb.org/t/p/original${movie.img}`}
-                    alt={movie.title}
-                />
-            </div>
-            <div className="movie-info">
-                <h1>{movie.title}</h1>
-                <small>
-                    {movie.date}
-                    <span className="movie-lang">{movie.language}</span>
-                </small>
-                <p>Duration: {movie.length} mins</p>
+    if (isLoading) {
+        return <p>Loading...</p>;
+    } else {
+        return (
+            <div className="movie-detail">
+                <div className="movie-img">
+                    <img
+                        src={`https://image.tmdb.org/t/p/original${movie.img}`}
+                        alt={movie.title}
+                    />
+                </div>
+                <div className="movie-info">
+                    <h1>{movie.title}</h1>
+                    <small>
+                        {movie.date}
+                        <span className="movie-lang">{movie.language}</span>
+                    </small>
+                    <p>Duration: {movie.length} mins</p>
 
-                <p className="movie-overview">{movie.overview}</p>
-                <Link to="/">
-                    <a>&lt;&lt; Back To Home Page</a>
-                </Link>
+                    <p className="movie-overview">{movie.overview}</p>
+                    <Link to="/">
+                        <a>&lt;&lt; Back To Home Page</a>
+                    </Link>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 import '../styles/Banner.scss';
 
 function Banner() {
@@ -40,7 +41,11 @@ function Banner() {
                 <Carousel.Caption className="bannerText">
                     <h3 className="bannerTitle">{movie.title}</h3>
                     <p className="bannerOverview">{movie.overview}</p>
-                    <button className="bannerButton d-block">More Info</button>
+                    <Link to={`/movies/${movie.id}`}>
+                        <button className="bannerButton d-block">
+                            More Info
+                        </button>
+                    </Link>
                 </Carousel.Caption>
             </Carousel.Item>
         );
