@@ -10,7 +10,7 @@ import '../styles/global/footer.scss';
 export default function Footer() {
     return (
         <footer className="bg-dark">
-            <p class="footer-title">Movie App</p>
+            <p className="footer-title">Movie App</p>
             <ul>
                 <li>
                     <a href="#">
@@ -34,7 +34,7 @@ export default function Footer() {
                 </li>
             </ul>
 
-            <p class="copyright">Copyright &#169; 2020 Chao Chun Lai</p>
+            <p className="copyright">Copyright &#169; 2020 Chao Chun Lai</p>
         </footer>
     );
 }
