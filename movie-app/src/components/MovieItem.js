@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/MovieItem.scss';
 
 export default class MovieItem extends Component {
@@ -18,9 +19,11 @@ export default class MovieItem extends Component {
                         <p className="card-text">
                             Release Date: {this.props.date}
                         </p>
-                        <a href="#" className="info-btn btn">
-                            More Info
-                        </a>
+                        <Link to={`/movies/${this.props.movieId}`}>
+                            <button type="button" className="btn info-btn">
+                                More Info
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

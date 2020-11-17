@@ -18,35 +18,21 @@ const createMovieItem = (movie) => {
 
 // Movie functional component
 function Movie() {
+    // Variables
+    const categories = ['popular', 'now_playing', 'upcoming', 'top_rated'];
+
     // State
     const [movies, setMovies] = useState({
         movies: [],
         isLoading: true,
     });
-    const [categories, setCategories] = useState([
-        'popular',
-        'now_playing',
-        'upcoming',
-        'top_rated',
-    ]);
     const [selectedCategory, setSelectedCategory] = useState('popular');
 
     var URL = `https://api.themoviedb.org/3/movie/${selectedCategory}?api_key=5539be3a42f8533e3aa1c749481b4c63&page=1`;
 
-    // ComponentDidMount()
+    // Component Lifecycle
     useEffect(() => {
-        fetch(URL)
-            .then((res) => res.json())
-            .then((json) => {
-                setMovies({
-                    movies: json.results,
-                    isLoading: false,
-                });
-            });
-    }, []);
-
-    // ComponentDidUpdate()
-    useEffect(() => {
+        console.log('Hi');
         fetch(URL)
             .then((res) => res.json())
             .then((json) => {
@@ -104,7 +90,6 @@ function Movie() {
                             label: 'Popular ',
                         }}
                     />
-                    {console.log(options)}
                 </header>
                 <div className="row row-cols-lg-4 row-cols-md-3 row-cols-1">
                     {movies.movies.map(createMovieItem)}
