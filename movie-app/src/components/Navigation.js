@@ -11,7 +11,7 @@ export default class Navigation extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="#">Home</Nav.Link>
-                            <Nav.Link href="#">Movie</Nav.Link>
+                            <Nav.Link href="/">Movie</Nav.Link>
                             <Nav.Link href="#">TV Shows</Nav.Link>
                             <Nav.Link href="#">Latest</Nav.Link>
                         </Nav>
