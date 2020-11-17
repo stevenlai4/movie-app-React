@@ -18,7 +18,7 @@ export default class MovieItem extends Component {
                         <p className="card-text">
                             Release Date: {this.props.date}
                         </p>
-                        <a href="#" className="btn btn-primary">
+                        <a href="#" className="info-btn btn">
                             More Info
                         </a>
                     </div>
