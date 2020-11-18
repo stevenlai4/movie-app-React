@@ -32,7 +32,6 @@ function Movie() {
 
     // Component Lifecycle
     useEffect(() => {
-        console.log('Hi');
         fetch(URL)
             .then((res) => res.json())
             .then((json) => {
